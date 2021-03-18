@@ -1,4 +1,3 @@
-
 //flutter packages are called here
 import 'package:flutter/material.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
@@ -15,12 +14,12 @@ import 'package:talawa/utils/apiFuctions.dart';
 import 'package:talawa/views/pages/events/addTaskDialog.dart';
 import 'package:talawa/views/pages/events/editEventDialog.dart';
 
-
 //pubspec packages are called here
 import 'package:timeline_list/timeline.dart';
 import 'package:timeline_list/timeline_model.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+
 class Events extends StatefulWidget {
   Events({Key key}) : super(key: key);
 
@@ -128,7 +127,6 @@ class _EventsState extends State<Events> {
     return eventDates;
   }
 
-
   //function called to delete the event
   Future<void> _deleteEvent(context, eventId) async {
     String mutation = Queries().deleteEvent(eventId);
@@ -136,14 +134,12 @@ class _EventsState extends State<Events> {
     getEvents();
   }
 
-
   //function to called be called for register
   Future<void> _register(context, eventId) async {
     String mutation = Queries().registerForEvent(eventId);
     Map result = await apiFunctions.gqlmutation(mutation);
     print(result);
   }
-
 
   //function to get the events
   Future<void> getEvents() async {
@@ -164,7 +160,6 @@ class _EventsState extends State<Events> {
       displayedEvents = eventList;
     });
   }
-
 
   //functions to edit the event
   Future<void> _editEvent(context, event) async {
