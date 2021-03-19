@@ -124,6 +124,8 @@ class LoginFormState extends State<LoginForm> {
                   validator: (value) => Validator.validateEmail(value),
                   textAlign: TextAlign.left,
                   style: TextStyle(color: Colors.white),
+                  //Changed text input action to next
+                  textInputAction: TextInputAction.next,
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.white),
@@ -169,7 +171,7 @@ class LoginFormState extends State<LoginForm> {
                       Icons.lock,
                       color: Colors.white,
                     ),
-                    suffixIcon: TextButton(
+                    suffixIcon: FlatButton(
                       onPressed: _toggle,
                       child: Icon(
                         _obscureText ? Icons.visibility_off : Icons.visibility,
@@ -231,7 +233,7 @@ class LoginFormState extends State<LoginForm> {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Center(child: Expanded(child: Text(msg))),
+          Center(child: Text(msg)),
         ],
       ),
     );
